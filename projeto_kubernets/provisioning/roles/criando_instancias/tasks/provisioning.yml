@@ -4,7 +4,7 @@
     name: "{{ sec_group_name }}"
     description: sg giropops
     profile: "{{ profile }}"
-    region: us-east-1
+    region: {{ region }}
     rules:
     - proto: tcp
         from_port: 22
@@ -15,3 +15,14 @@
       - proto: all
         cidr_ip: 0.0.0.0/0
     register: basic_firewall
+
+- name: Criando a instancia EC2 
+  local_action: ec2 
+    group={{ sec_group_name}}
+    instance_type={{ instance_type }}
+    image={{ image }}
+    profile={{ profile }}
+    wait=true
+    region={{ region }}
+    keypair={{ ansible-class }}
+    count={{ count }}
