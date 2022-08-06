@@ -24,7 +24,7 @@
     profile={{ profile }}
     wait=true
     region={{ region }}
-    keypair={{ keypair }}
+    key_name={{ keypair }}
     count={{ count }}
   register: ec2  
 
