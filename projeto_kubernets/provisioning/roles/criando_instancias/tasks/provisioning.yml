@@ -25,7 +25,7 @@
     wait=true
     region={{ region }}
     key_name={{ keypair }}
-    count= 3
+    count={{ count }}
   register: ec2  
 
 - name: Adicionando a instancia ao inventario temp
