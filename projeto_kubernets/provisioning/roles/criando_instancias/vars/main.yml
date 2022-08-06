@@ -5,5 +5,4 @@ sec_group_name: giropops
 image: ami-0729e439b6769d6ab
 keypair: ansible-class
 region: us-east-1
-count: 3
 profile: giropops
