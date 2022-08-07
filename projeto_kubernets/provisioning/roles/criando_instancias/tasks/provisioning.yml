@@ -17,15 +17,15 @@
   register: basic_firewall
 
 - name: Criando a instancia EC2
-  local_action: ec2_instances
+  ec2:
     group={{ sec_group_name }}
     instance_type={{ instance_type }}
-    image_id={{ image }}
+    image={{ image }}
     profile={{ profile }}
     wait=true
     region={{ region }}
-    key_name={{ keypair }}
-    count= 3
+    keypair={{ keypair }} 
+    count={{ count }}
   register: ec2  
 
 - name: Adicionando a instancia ao inventario temp
