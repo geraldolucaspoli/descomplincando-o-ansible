@@ -1,0 +1,1 @@
+## Playbook ansible para fazer a instalação do Docker + kubeadm + Kubernetes + kubectl

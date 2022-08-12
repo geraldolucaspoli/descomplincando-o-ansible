@@ -1,0 +1,11 @@
+---
+- name: Download Helm install
+  get_url:
+    url: https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+    dest: /tmp/get_helm.sh
+    mode: '0700'
+
+- name: Instalando o Helm
+  shell:
+    cmd: /tmp/get_helm.sh
+  register: install_helm

@@ -1,0 +1,32 @@
+---
+- hosts: servers
+  become: yes
+  remote_user: dedi
+  tasks:
+  - name: Instalando o Nginx
+    apt: 
+      name: nginx
+      state: latest
+      update_cache: yes  
+
+  - name: Habilitando o Nginx na inicializacao
+    service:
+      name: nginx
+      enabled: yes
+
+  - name: Iniciando o Nginx
+    service:
+      name: nginx
+      state: started
+
+  - name: Copiando o arquivo html do Nginx
+    template:
+      src: index.html.j2
+      dest: /var/www/html/index.html
+    notify: Restartando o Nginx 
+
+  handlers:
+  - name: Restartando o Nginx
+    service:
+      name: nginx
+      state: restarted

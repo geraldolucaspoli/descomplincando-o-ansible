@@ -1,0 +1,1 @@
+## Playbook para fazer o deploy da versão V1 da aplicação

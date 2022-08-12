@@ -1,8 +1,2 @@
-## HOSTS TREINAMENTO HERALDO
-[webserver]
-node01
-node02
-
-[db]
-node03
-
+[servers]
+dedi-vm01

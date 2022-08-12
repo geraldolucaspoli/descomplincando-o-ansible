@@ -1,0 +1,4 @@
+---
+# vars file for deploy_k8s_monitor
+url_repo_helm: https://prometheus-community.github.io/helm-charts
+deploy_prometheus: "meu-querido-prometheus prometheus-community/kube-prometheus-stack"

@@ -1,0 +1,15 @@
+---
+- name: Adicionando o repositorio Helm do Prometheus Operator
+  shell:
+    cmd: helm repo add prometheus-community {{ url_repo_helm }}
+  register: prometheus_add_repo
+
+- name: Atualizando o repositorio Helm do Prometheus Operator
+  shell:
+    cmd: helm repo update
+  register: prometheus_repo_update
+
+- name: Instalando o Prometheus Operator
+  shell:
+    cmd: helm install {{ deploy_prometheus }}
+  register: install_prometheus
